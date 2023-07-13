@@ -31,7 +31,7 @@ public class Pizza {
     public void addExtraCheese() {
         // your code goes here
         count++;
-        price += 80;
+
     }
 
 
@@ -39,10 +39,7 @@ public class Pizza {
     public void addExtraToppings(){
         // your code goes here
         count2++;
-        if(isVeg)
-            price+=70;
-        else
-            price+=120;
+
 
 
     }
@@ -50,7 +47,8 @@ public class Pizza {
     public void addTakeaway(){
         // your code goes here
         count3++;
-        price+=20;
+
+
 
 
     }
@@ -63,19 +61,24 @@ public class Pizza {
         else
             bill=bill+"\nBase Price Of The Pizza: "+400+"\n";
         if(count!=0) {
+            price+=80;
             bill = bill + "Extra Cheese Added: " + 80 + "\n";
         }
         if(isVeg && count2!=0) {
             bill = bill + "Extra Toppings Added: " + 70+"\n";
+            price+=70;
         }
         else{
             if(count2!=0)
             {
+                price+=120;
                 bill=bill+"Extra Toppings Added: "+120+"\n";
             }
         }
-        if(count3!=0)
-            bill=bill+"Paperbag Added: "+20+"\n";
+        if(count3!=0) {
+            bill = bill + "Paperbag Added: " + 20 + "\n";
+            price += 20;
+        }
         bill=bill+"Total Price: "+price+"\n";
 
         return this.bill;
