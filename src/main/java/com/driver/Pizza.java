@@ -62,19 +62,19 @@ public class Pizza {
         else
             bill=bill+"\nBase Price Of The Pizza:"+400+"\n";
         if(count!=0) {
-            bill = bill + "Extra Cheese Added:" + count * 80 + "\n";
+            bill = bill + "Extra Cheese Added:" + 80 + "\n";
         }
         if(isVeg && count2!=0) {
-            bill = bill + "Extra Toppings Added:" + count2 * 70+"\n";
+            bill = bill + "Extra Toppings Added:" + 70+"\n";
         }
         else{
             if(count2!=0)
             {
-                bill=bill+"Extra Toppings Added:"+count2*120+"\n";
+                bill=bill+"Extra Toppings Added:"+120+"\n";
             }
         }
         if(count3!=0)
-            bill=bill+"Paperbag Added:"+count3*20+"\n";
+            bill=bill+"Paperbag Added:"+20+"\n";
         bill=bill+"Total Price:"+price+"\n";
 
         return this.bill;
