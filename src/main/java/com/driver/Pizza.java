@@ -61,12 +61,14 @@ public class Pizza {
         else
             bill=bill+"\nBase Price Of The Pizza: "+400+"\n";
         if(count!=0) {
-            price+=80;
+            price+=80*count;
             bill = bill + "Extra Cheese Added: " + 80 + "\n";
         }
-        if(isVeg && count2!=0) {
-            bill = bill + "Extra Toppings Added: " + 70+"\n";
-            price+=70;
+        if(isVeg){
+            if(count2!=0) {
+                bill = bill + "Extra Toppings Added: " + 70 + "\n";
+                price += 70;
+            }
         }
         else{
             if(count2!=0)
