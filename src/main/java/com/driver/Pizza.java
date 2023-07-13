@@ -14,11 +14,11 @@ public class Pizza {
         // your code goes here
         if(isVeg)
         {
-            price+=300;
+            this.price+=300;
 
         }
         else {
-            price+=400;
+            this.price+=400;
 
         }
 
