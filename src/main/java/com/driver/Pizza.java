@@ -59,24 +59,24 @@ public class Pizza {
         // your code goes here
         this.bill="";
         if(isVeg)
-            bill=bill+"\nBase Price Of The Pizza:"+300+"\n";
+            bill=bill+"\nBase Price Of The Pizza: "+300+"\n";
         else
-            bill=bill+"\nBase Price Of The Pizza:"+400+"\n";
+            bill=bill+"\nBase Price Of The Pizza: "+400+"\n";
         if(count!=0) {
-            bill = bill + "Extra Cheese Added:" + 80 + "\n";
+            bill = bill + "Extra Cheese Added: " + 80 + "\n";
         }
         if(isVeg && count2!=0) {
-            bill = bill + "Extra Toppings Added:" + 70+"\n";
+            bill = bill + "Extra Toppings Added: " + 70+"\n";
         }
         else{
             if(count2!=0)
             {
-                bill=bill+"Extra Toppings Added:"+120+"\n";
+                bill=bill+"Extra Toppings Added: "+120+"\n";
             }
         }
         if(count3!=0)
-            bill=bill+"Paperbag Added:"+20+"\n";
-        bill=bill+"Total Price:"+price+"\n";
+            bill=bill+"Paperbag Added: "+20+"\n";
+        bill=bill+"Total Price: "+price+"\n";
 
         return this.bill;
     }
