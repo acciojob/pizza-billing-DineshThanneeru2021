@@ -5,22 +5,37 @@ public class Pizza {
     private int price;
     private Boolean isVeg;
     private String bill;
-    int count;
-    int count2;
-    int count3;
+    private boolean isPaperBagAdded;
+    private boolean isCheeseAdded;
+    private boolean isExtraToppingAdded;
+    private int totalPrice;
+    private int basePrice;
+    private boolean isBillGenerated;
+    private int cheesePrice;
+    private int ExtraToppingPrice;
+    private int paperBagprice;
+
+
 
     public Pizza(Boolean isVeg){
         this.isVeg = isVeg;
         // your code goes here
         if(isVeg)
         {
-            this.price+=300;
+            basePrice=300;
+            ExtraToppingPrice=70;
+
 
         }
         else {
-            this.price+=400;
+            basePrice=400;
+            ExtraToppingPrice=120;
 
         }
+        totalPrice+=basePrice;
+        bill=bill+"Base Price Of The Pizza:"+basePrice+"\n";
+        cheesePrice=80;
+        paperBagprice=20;
 
     }
 
@@ -30,7 +45,12 @@ public class Pizza {
 
     public void addExtraCheese() {
         // your code goes here
-        count++;
+        if(!isCheeseAdded)
+        {
+            totalPrice+=80;
+            isCheeseAdded=true;
+            bill=bill+"Extra Cheese Added:"+cheesePrice+"\n";
+        }
 
     }
 
@@ -38,7 +58,12 @@ public class Pizza {
 
     public void addExtraToppings(){
         // your code goes here
-        count2++;
+        if(!isExtraToppingAdded)
+        {
+            isExtraToppingAdded=true;
+            totalPrice+=ExtraToppingPrice;
+            bill=bill+"Extra Toppings Added:"+ExtraToppingPrice+"\n";
+        }
 
 
 
@@ -46,7 +71,12 @@ public class Pizza {
 
     public void addTakeaway(){
         // your code goes here
-        count3++;
+        if(!isPaperBagAdded)
+        {
+            isPaperBagAdded=true;
+            totalPrice+=20;
+            bill=bill+"Paperbag Added:"+paperBagprice+"\n";
+        }
 
 
 
@@ -55,34 +85,11 @@ public class Pizza {
 
     public String getBill(){
         // your code goes here
-        this.bill="";
-        if(isVeg)
-            bill=bill+"\nBase Price Of The Pizza: "+300+"\n";
-        else
-            bill=bill+"\nBase Price Of The Pizza: "+400+"\n";
-        if(count!=0) {
-            this.price+=80*count;
-            bill = bill + "Extra Cheese Added: " + 80 + "\n";
+        if(!isBillGenerated) {
+            isBillGenerated = true;
+
+            bill = bill + "Total Price:" + totalPrice +"\n";
         }
-        if(isVeg){
-            if(count2!=0) {
-                bill = bill + "Extra Toppings Added: " + 70 + "\n";
-                this.price += 70;
-            }
-        }
-        else{
-            if(count2!=0)
-            {
-                this.price+=120;
-                bill=bill+"Extra Toppings Added: "+120+"\n";
-            }
-        }
-        if(count3!=0) {
-            bill = bill + "Paperbag Added: " + 20 + "\n";
-            this.price += 20;
-        }
-        bill=bill+"Total Price: "+this.price+"\n";
-        System.out.println("Hello");
 
         return this.bill;
     }
