@@ -33,7 +33,7 @@ public class Pizza {
 
         }
         totalPrice+=basePrice;
-        bill=bill+"Base Price Of The Pizza:"+basePrice+"\n";
+        bill=bill+"Base Price Of The Pizza: "+basePrice+"\n";
         cheesePrice=80;
         paperBagprice=20;
 
@@ -49,7 +49,7 @@ public class Pizza {
         {
             totalPrice+=80;
             isCheeseAdded=true;
-            bill=bill+"Extra Cheese Added:"+cheesePrice+"\n";
+            bill=bill+"Extra Cheese Added: "+cheesePrice+"\n";
         }
 
     }
@@ -62,7 +62,7 @@ public class Pizza {
         {
             isExtraToppingAdded=true;
             totalPrice+=ExtraToppingPrice;
-            bill=bill+"Extra Toppings Added:"+ExtraToppingPrice+"\n";
+            bill=bill+"Extra Toppings Added: "+ExtraToppingPrice+"\n";
         }
 
 
@@ -75,7 +75,7 @@ public class Pizza {
         {
             isPaperBagAdded=true;
             totalPrice+=20;
-            bill=bill+"Paperbag Added:"+paperBagprice+"\n";
+            bill=bill+"Paperbag Added: "+paperBagprice+"\n";
         }
 
 
@@ -88,7 +88,7 @@ public class Pizza {
         if(!isBillGenerated) {
             isBillGenerated = true;
 
-            bill = bill + "Total Price:" + totalPrice +"\n";
+            bill = bill + "Total Price: " + totalPrice +"\n";
         }
 
         return this.bill;
