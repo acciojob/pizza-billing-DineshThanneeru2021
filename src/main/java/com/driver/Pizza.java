@@ -18,6 +18,7 @@ public class Pizza {
 
 
     public Pizza(Boolean isVeg){
+        bill="";
         this.isVeg = isVeg;
         // your code goes here
         if(isVeg)
@@ -33,13 +34,14 @@ public class Pizza {
 
         }
         totalPrice+=basePrice;
-        bill=bill+"Base Price Of The Pizza: "+basePrice+"\n";
+        this.bill=this.bill+"Base Price Of The Pizza: "+basePrice+"\n";
         cheesePrice=80;
         paperBagprice=20;
 
     }
 
     public int getPrice(){
+        this.price=totalPrice;
         return this.price;
     }
 
@@ -49,7 +51,7 @@ public class Pizza {
         {
             totalPrice+=80;
             isCheeseAdded=true;
-            bill=bill+"Extra Cheese Added: "+cheesePrice+"\n";
+            this.bill=this.bill+"Extra Cheese Added: "+cheesePrice+"\n";
         }
 
     }
@@ -62,7 +64,7 @@ public class Pizza {
         {
             isExtraToppingAdded=true;
             totalPrice+=ExtraToppingPrice;
-            bill=bill+"Extra Toppings Added: "+ExtraToppingPrice+"\n";
+            this.bill=this.bill+"Extra Toppings Added: "+ExtraToppingPrice+"\n";
         }
 
 
@@ -75,7 +77,7 @@ public class Pizza {
         {
             isPaperBagAdded=true;
             totalPrice+=20;
-            bill=bill+"Paperbag Added: "+paperBagprice+"\n";
+            this.bill=this.bill+"Paperbag Added: "+paperBagprice+"\n";
         }
 
 
@@ -85,10 +87,11 @@ public class Pizza {
 
     public String getBill(){
         // your code goes here
+
         if(!isBillGenerated) {
             isBillGenerated = true;
 
-            bill = bill + "Total Price: " + totalPrice +"\n";
+            this.bill = this.bill + "Total Price: " + totalPrice +"\n";
         }
 
         return this.bill;
