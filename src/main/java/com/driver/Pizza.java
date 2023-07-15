@@ -82,6 +82,7 @@ public class Pizza {
             this.price += 20;
         }
         bill=bill+"Total Price: "+this.price+"\n";
+        System.out.println("Hello");
 
         return this.bill;
     }
